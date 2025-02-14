@@ -19,15 +19,32 @@
     <span style="font-weight:bold">@detectedLanguage</span>
 </div>
 
+@if(allLabels is not null)
+            {
+                <ul>
+                    @foreach (var label in allLabels)
+                    {
+                        <li>@label.Key - @(Math.Round(label.Value*100,2))%</li>
+                    }
+                </ul>
+            }
+
+
 @code {
     private string? inputText;
 
     private string? detectedLanguage = "None";
 
+    // make it nullable
+    private IOrderedEnumerable<KeyValuePair<string, float>>? allLabels;
+
     private void TextChanged()
     {
         if (inputText is null or "") {
             detectedLanguage = "None";
+
+            // we set to null
+            allLabels = null;
             return;
         }
 
@@ -42,6 +59,8 @@
         var output = LanguageDetectionModel.Predict(input);
 
         detectedLanguage = output.PredictedLabel;
+
+        allLabels = LanguageDetectionModel.PredictAllLabels(input);
 
     }
 }
