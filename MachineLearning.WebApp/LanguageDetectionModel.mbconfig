@@ -42,11 +42,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "LbfgsLogisticRegressionOva",
-        "Score": 0.84444444444444444,
-        "RuntimeInSeconds": 0.096,
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.60166666666666668,
+        "RuntimeInSeconds": 0.15,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e6 * e8",
+          "_SCHEMA_": "e0 * e1 * e2 * e4 * e5",
           "e0": {
             "InputColumnName": "Message",
             "OutputColumnName": "Message"
@@ -62,13 +62,13 @@
             "InputColumnName": "Language",
             "AddKeyValueAnnotationsAsText": false
           },
-          "e6": {
+          "e4": {
             "L1Regularization": 0.03125,
             "L2Regularization": 0.03125,
             "LabelColumnName": "Language",
             "FeatureColumnName": "Features"
           },
-          "e8": {
+          "e5": {
             "OutputColumnName": "PredictedLabel",
             "InputColumnName": "PredictedLabel"
           }
@@ -77,11 +77,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "LbfgsLogisticRegressionOva",
-        "Score": 0.84444444444444444,
-        "RuntimeInSeconds": 0.093,
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.60166666666666668,
+        "RuntimeInSeconds": 0.125,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e6 * e8",
+          "_SCHEMA_": "e0 * e1 * e2 * e4 * e5",
           "e0": {
             "InputColumnName": "Message",
             "OutputColumnName": "Message"
@@ -97,13 +97,13 @@
             "InputColumnName": "Language",
             "AddKeyValueAnnotationsAsText": false
           },
-          "e6": {
+          "e4": {
             "L1Regularization": 0.03125,
             "L2Regularization": 0.03125,
             "LabelColumnName": "Language",
             "FeatureColumnName": "Features"
           },
-          "e8": {
+          "e5": {
             "OutputColumnName": "PredictedLabel",
             "InputColumnName": "PredictedLabel"
           }
@@ -112,11 +112,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "LbfgsLogisticRegressionOva",
-        "Score": 0.84444444444444444,
-        "RuntimeInSeconds": 0.13,
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.60166666666666668,
+        "RuntimeInSeconds": 0.174,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e6 * e8",
+          "_SCHEMA_": "e0 * e1 * e2 * e4 * e5",
           "e0": {
             "InputColumnName": "Message",
             "OutputColumnName": "Message"
@@ -132,13 +132,13 @@
             "InputColumnName": "Language",
             "AddKeyValueAnnotationsAsText": false
           },
-          "e6": {
+          "e4": {
             "L1Regularization": 0.03125,
             "L2Regularization": 0.03125,
             "LabelColumnName": "Language",
             "FeatureColumnName": "Features"
           },
-          "e8": {
+          "e5": {
             "OutputColumnName": "PredictedLabel",
             "InputColumnName": "PredictedLabel"
           }
@@ -147,46 +147,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "LbfgsLogisticRegressionOva",
-        "Score": 0.84444444444444444,
-        "RuntimeInSeconds": 0.102,
-        "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e6 * e8",
-          "e0": {
-            "InputColumnName": "Message",
-            "OutputColumnName": "Message"
-          },
-          "e1": {
-            "InputColumnNames": [
-              "Message"
-            ],
-            "OutputColumnName": "Features"
-          },
-          "e2": {
-            "OutputColumnName": "Language",
-            "InputColumnName": "Language",
-            "AddKeyValueAnnotationsAsText": false
-          },
-          "e6": {
-            "L1Regularization": 0.03125,
-            "L2Regularization": 0.031946927,
-            "LabelColumnName": "Language",
-            "FeatureColumnName": "Features"
-          },
-          "e8": {
-            "OutputColumnName": "PredictedLabel",
-            "InputColumnName": "PredictedLabel"
-          }
-        }
-      },
-      {
-        "Version": 1,
-        "Type": "Trial",
-        "TrainerName": "LbfgsLogisticRegressionOva",
-        "Score": 0.84444444444444444,
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.60166666666666668,
         "RuntimeInSeconds": 0.131,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e6 * e8",
+          "_SCHEMA_": "e0 * e1 * e2 * e4 * e5",
           "e0": {
             "InputColumnName": "Message",
             "OutputColumnName": "Message"
@@ -202,13 +167,48 @@
             "InputColumnName": "Language",
             "AddKeyValueAnnotationsAsText": false
           },
-          "e6": {
-            "L1Regularization": 0.03279129,
-            "L2Regularization": 0.032030158,
+          "e4": {
+            "L1Regularization": 0.03125,
+            "L2Regularization": 0.03125,
             "LabelColumnName": "Language",
             "FeatureColumnName": "Features"
           },
-          "e8": {
+          "e5": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.60166666666666668,
+        "RuntimeInSeconds": 0.19,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4 * e5",
+          "e0": {
+            "InputColumnName": "Message",
+            "OutputColumnName": "Message"
+          },
+          "e1": {
+            "InputColumnNames": [
+              "Message"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "OutputColumnName": "Language",
+            "InputColumnName": "Language",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "L1Regularization": 0.03125,
+            "L2Regularization": 0.03125,
+            "LabelColumnName": "Language",
+            "FeatureColumnName": "Features"
+          },
+          "e5": {
             "OutputColumnName": "PredictedLabel",
             "InputColumnName": "PredictedLabel"
           }
@@ -219,14 +219,11 @@
       "e0": "FeaturizeText",
       "e1": "Concatenate",
       "e2": "MapValueToKey",
-      "e3": "FastTreeOva",
-      "e4": "FastForestOva",
-      "e5": "LightGbmMulti",
-      "e6": "LbfgsLogisticRegressionOva",
-      "e7": "LbfgsMaximumEntropyMulti",
-      "e8": "MapKeyToValue"
+      "e3": "LbfgsLogisticRegressionOva",
+      "e4": "LbfgsMaximumEntropyMulti",
+      "e5": "MapKeyToValue"
     },
-    "Schema": "e0 * e1 * e2 * (e3 + e4 + e5 + e6 + e7) * e8",
+    "Schema": "e0 * e1 * e2 * (e3 + e4) * e5",
     "MetricName": "MacroAccuracy",
     "ModelFilePath": "C:\\Repos - mcmdothub\\mcmdothub-machine-learning\\MachineLearning.WebApp\\LanguageDetectionModel.mlnet"
   },
@@ -237,14 +234,11 @@
     "Subsampling": false,
     "Tuner": "eci-cfo",
     "Type": "ClassificationTrainingOption",
-    "TrainingTime": 20,
+    "TrainingTime": 30,
     "OptimizeMetric": "MacroAccuracy",
     "LabelColumn": "Language",
     "AvailableTrainers": [
-      "LBFGS",
-      "LGBM",
-      "FASTTREE",
-      "FASTFOREST"
+      "LBFGS"
     ],
     "ValidationOption": {
       "Version": 0,

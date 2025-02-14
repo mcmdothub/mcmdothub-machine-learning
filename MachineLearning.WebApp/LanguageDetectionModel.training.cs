@@ -92,7 +92,7 @@ namespace MachineLearning_WebApp
             var pipeline = mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"Message",outputColumnName:@"Message")      
                                     .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Message"}))      
                                     .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"Language",inputColumnName:@"Language",addKeyValueAnnotationsAsText:false))      
-                                    .Append(mlContext.MulticlassClassification.Trainers.OneVersusAll(binaryEstimator: mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(new LbfgsLogisticRegressionBinaryTrainer.Options(){L1Regularization=0.03125F,L2Regularization=0.03125F,LabelColumnName=@"Language",FeatureColumnName=@"Features"}), labelColumnName:@"Language"))      
+                                    .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(new LbfgsMaximumEntropyMulticlassTrainer.Options(){L1Regularization=0.03125F,L2Regularization=0.03125F,LabelColumnName=@"Language",FeatureColumnName=@"Features"}))      
                                     .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"PredictedLabel",inputColumnName:@"PredictedLabel"));
 
             return pipeline;
