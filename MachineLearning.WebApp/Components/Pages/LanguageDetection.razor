@@ -1,5 +1,6 @@
 ﻿@page "/languagedetection"
 @rendermode InteractiveServer
+@using MachineLearning_WebApp
 
 <PageTitle>Language Detection</PageTitle>
 
@@ -25,6 +26,22 @@
 
     private void TextChanged()
     {
+        if (inputText is null or "") {
+            detectedLanguage = "None";
+            return;
+        }
+
         // TODO: Set detectedLanguage field based on inputText field
+        //Load sample data from the "input"
+        var input = new LanguageDetectionModel.ModelInput()
+        {
+            Message = inputText
+        };
+
+        //Load model and predict output
+        var output = LanguageDetectionModel.Predict(input);
+
+        detectedLanguage = output.PredictedLabel;
+
     }
 }
