@@ -1,5 +1,6 @@
 ﻿@page "/coffeedetection"
 @rendermode InteractiveServer
+@using MachineLearning_WebApp
 
 <PageTitle>Coffee Detection</PageTitle>
 
@@ -25,6 +26,16 @@
     <span style="font-weight:bold">@detectedContent</span>
 </div>
 
+@if (allLabels is not null)
+{
+    <ul>
+        @foreach (var label in allLabels)
+        {
+            <li>@label.Key - @(Math.Round(label.Value * 100, 2))%</li>
+        }
+    </ul>
+}
+
 @code {
     private const long maxFileSize = 2 * 1024 * 1024; // 2 MB
 
@@ -33,6 +44,9 @@
     private string? detectedContent = "None";
 
     private string? errorMessage;
+
+    // make it nullable
+    private IOrderedEnumerable<KeyValuePair<string, float>>? allLabels;
 
     private async Task LoadFileAsync(InputFileChangeEventArgs e)
     {
@@ -45,6 +59,18 @@
         SetBase64ImageSource(e.File.ContentType, image);
 
         // TODO: Set detectedContent field based on image
+        var input = new CoffeeDetectionModel.ModelInput
+        {
+            // we assign our "image" to the property of "ImageSource"
+            ImageSource = image
+        };
+
+        var output = CoffeeDetectionModel.Predict(input);
+
+        detectedContent = output.PredictedLabel;
+
+        // set the percentage
+        allLabels = CoffeeDetectionModel.PredictAllLabels(input);
     }
 
     private async Task<byte[]> GetImageByteArray(IBrowserFile browserFile)
