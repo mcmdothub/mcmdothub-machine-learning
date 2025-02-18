@@ -19,15 +19,15 @@
     <span style="font-weight:bold">@detectedLanguage</span>
 </div>
 
-@if(allLabels is not null)
-            {
-                <ul>
-                    @foreach (var label in allLabels)
-                    {
-                        <li>@label.Key - @(Math.Round(label.Value*100,2))%</li>
-                    }
-                </ul>
-            }
+@if (allLabels is not null)
+{
+    <ul>
+        @foreach (var label in allLabels)
+        {
+            <li>@label.Key - @(Math.Round(label.Value * 100, 2))%</li>
+        }
+    </ul>
+}
 
 
 @code {
@@ -40,7 +40,8 @@
 
     private void TextChanged()
     {
-        if (inputText is null or "") {
+        if (inputText is null or "")
+        {
             detectedLanguage = "None";
 
             // we set to null
